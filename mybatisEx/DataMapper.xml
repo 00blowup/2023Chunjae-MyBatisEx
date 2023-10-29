@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatisEx.DataMapper">
+
+    <select id="dataList" resultType="DataVO">
+
+        SELECT * FROM t_address
+
+    </select>
+
+    <insert id="dataInsert" parameterType="DataVO">
+
+        INSERT INTO t_address
+
+        VALUES
+
+        (num_seq.nextval, #{name}, #{address}, #{phone})
+
+    </insert>
+
+    <delete id="dataDelete" parameterType="Integer">
+
+        DELETE FROM t_address
+
+        WHERE
+
+        id=#{id}
+
+    </delete>
+
+    <select id="dataContent" resultType="DataVO" parameterType="Integer">
+
+        SELECT * FROM t_address
+
+        WHERE
+
+        id=#{id}
+
+    </select>
+
+    <update id="dataUpdate" parameterType="DataVO">
+
+        UPDATE t_address
+
+        SET
+
+        name=#{name}, address=#{address}, phone=#{phone}
+
+        WHERE
+
+        id=#{id}
+
+    </update>
+
+
+
+
+
+</mapper>
